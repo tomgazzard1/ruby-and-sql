@@ -61,7 +61,7 @@ puts "There are #{cali_companies.count} california companies"
 # 4. query companies table to find single row for Apple
 
 apple = Company.find_by({"name" => "Apple"})
-# Looking for multiple rows use WHERE (gives array). When you have a single row use find_by and it returns an array
+# Looking for multiple rows use WHERE (gives array). When you have a single row use find_by and it returns an hash
 puts apple.inspect
 
 # 5. read a row's column value
@@ -76,3 +76,9 @@ puts amazon.inspect # URL is updated
 
 
 # 7. delete a row
+twitter = Company.find_by({"name" => "Twitter"}) #find_by finds a row
+twitter.destroy # This is deleting a row
+puts "There are #{Company.all.count} companies"
+
+
+
